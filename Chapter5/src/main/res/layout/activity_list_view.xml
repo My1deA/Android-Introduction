@@ -27,6 +27,14 @@
             android:spinnerMode="dialog" />
     </RelativeLayout>
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_planet"
+        android:divider="@drawable/divider_red2"
+        android:dividerHeight="5dp"
+        android:headerDividersEnabled="true"
+        android:footerDividersEnabled="true"></ListView>
 
 
 </LinearLayout>
