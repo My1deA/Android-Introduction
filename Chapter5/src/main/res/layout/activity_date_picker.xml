@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_date"
+        android:text="请选择日期"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+    <!-- datePickerMode取值spinner表示下拉框风格，取值calendar表示日历风格 -->
+    <DatePicker
+        android:id="@+id/dp_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:calendarViewShown="true"
+        android:datePickerMode="spinner"
+        android:spinnersShown="true"></DatePicker>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_ok"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_date"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="17sp"/>
+
+</LinearLayout>
