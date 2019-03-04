@@ -10,7 +10,6 @@ import android.util.TypedValue;
 import android.widget.Toast;
 
 import com.example.chapter5.adapter.ImagePagerAdapater;
-import com.example.chapter5.adapter.PlanetListAdapter;
 import com.example.chapter5.bean.GoodsInfo;
 
 import java.util.ArrayList;
@@ -29,7 +28,7 @@ public class PagerTitleStripActivity extends AppCompatActivity implements ViewPa
 
     private void initPagerStrip() {
         PagerTitleStrip pts_title=findViewById(R.id.pts_title);
-        pts_title.setTextSize(TypedValue.COMPLEX_UNIT_DIP,20);
+        pts_title.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
         pts_title.setTextColor(Color.BLUE);
     }
 
