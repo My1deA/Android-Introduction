@@ -1,6 +1,7 @@
 package com.example.chapter5;
 
 import android.content.Intent;
+import android.support.v4.view.PagerTitleStrip;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -45,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }else  if(v.getId()==R.id.btn_view_pager){
             Intent intent=new Intent(this,ViewPagerActivity.class);
+            startActivity(intent);
+        }else  if(v.getId()==R.id.btn_view_pager){
+            Intent intent=new Intent(this, PagerTitleStripActivity.class);
             startActivity(intent);
         }
     }
