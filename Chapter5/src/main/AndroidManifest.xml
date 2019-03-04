@@ -28,6 +28,7 @@
 
         <activity android:name=".DatePickerActivity"/>
         <activity android:name=".TimePickerActivity"/>
+        <activity android:name=".ViewPagerActivity"/>
 
 
     </application>

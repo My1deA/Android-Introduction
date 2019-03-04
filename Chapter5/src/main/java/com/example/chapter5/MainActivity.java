@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if(v.getId()==R.id.btn_time_picker){
             Intent intent=new Intent(this,TimePickerActivity.class);
             startActivity(intent);
+        }else  if(v.getId()==R.id.btn_view_pager){
+            Intent intent=new Intent(this,ViewPagerActivity.class);
+            startActivity(intent);
         }
     }
 }
