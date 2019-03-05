@@ -57,7 +57,7 @@ public class ImagePagerAdapater extends PagerAdapter {
     }
 
     //获得指定页面的标题文本
-    public CharSequence gatPageTitle(int position){
+    public CharSequence getPageTitle(int position){
         return mGoodsList.get(position).name;
     }
 

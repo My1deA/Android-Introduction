@@ -30,6 +30,7 @@
         <activity android:name=".TimePickerActivity"/>
         <activity android:name=".ViewPagerActivity"/>
         <activity android:name=".PagerTitleStripActivity"/>
+        <activity android:name=".LaunchSimpleActivity"/>
 
     </application>
 

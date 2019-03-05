@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else  if(v.getId()==R.id.btn_title_strip){
             Intent intent=new Intent(this, PagerTitleStripActivity.class);
             startActivity(intent);
+        }else  if(v.getId()==R.id.btn_launch_simple){
+            Intent intent=new Intent(this, LaunchSimpleActivity.class);
+            startActivity(intent);
         }
     }
 }
