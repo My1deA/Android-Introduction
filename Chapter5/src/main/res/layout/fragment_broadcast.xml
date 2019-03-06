@@ -26,7 +26,20 @@
             android:spinnerMode="dialog">
         </Spinner>
 
-
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
 
 </LinearLayout>
