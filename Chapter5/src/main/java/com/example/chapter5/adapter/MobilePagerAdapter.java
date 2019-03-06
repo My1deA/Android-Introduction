@@ -29,4 +29,9 @@ public class MobilePagerAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return  mGoodsList.size();
     }
+
+    // 获得指定碎片页的标题文本
+    public CharSequence getPageTitle(int position) {
+        return mGoodsList.get(position).name;
+    }
 }

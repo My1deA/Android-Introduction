@@ -39,7 +39,7 @@ public class DynamicFragment extends Fragment {
             mDesc=getArguments().getString("desc");
         }
         // 根据布局文件fragment_dynamic.xml生成视图对象
-        mView=inflater.inflate(R.layout.activity_fragment_dynamic,container,false);
+        mView=inflater.inflate(R.layout.fragment_dynamic,container,false);
         ImageView iv_pic=mView.findViewById(R.id.iv_pic);
         TextView tv_desc=mView.findViewById(R.id.tv_desc);
         iv_pic.setImageResource(mImageId);

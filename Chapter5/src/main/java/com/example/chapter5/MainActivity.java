@@ -56,7 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if(v.getId()==R.id.btn_fragment_dynamic){
             Intent intent=new Intent(this,FragmentDynamicActivity.class);
             startActivity(intent);
-
+        }else if(v.getId()==R.id.btn_broad_temp){
+            Intent intent=new Intent(this,BroadTempActivity.class);
+            startActivity(intent);
         }
     }
 }
