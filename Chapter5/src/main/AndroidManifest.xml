@@ -31,6 +31,7 @@
         <activity android:name=".ViewPagerActivity"/>
         <activity android:name=".PagerTitleStripActivity"/>
         <activity android:name=".LaunchSimpleActivity" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".FragmentDynamicActivity"/>
 
     </application>
 
