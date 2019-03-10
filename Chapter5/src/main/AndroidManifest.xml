@@ -33,6 +33,13 @@
         <activity android:name=".LaunchSimpleActivity" android:theme="@style/AppCompatTheme"/>
         <activity android:name=".FragmentDynamicActivity"/>
         <activity android:name=".BroadTempActivity"/>
+        <activity android:name=".AlarmActivity" />
+
+        <receiver android:name=".AlarmActivity$AlarmReceiver" >
+            <intent-filter>
+                <action android:name="com.example.senior.AlarmActivity.AlarmReceiver" />
+            </intent-filter>
+        </receiver>
 
     </application>
 
