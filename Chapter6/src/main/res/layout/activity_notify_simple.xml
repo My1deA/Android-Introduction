@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/editext_selector"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:hint="请输入消息标题"/>
+
+    <EditText
+         android:id="@+id/et_message"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/editext_selector"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:hint="输入消息内容"/>
+
+    <Button
+        android:id="@+id/btn_send_simple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="发送简单消息"
+        android:textColor="@color/black"
+        android:textSize="17sp"/>
+
+</LinearLayout>

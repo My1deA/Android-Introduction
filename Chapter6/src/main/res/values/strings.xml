@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Chapter6</string>
+
+    <string name="pause_event">com.example.Chapter6.service.pause</string>
+</resources>

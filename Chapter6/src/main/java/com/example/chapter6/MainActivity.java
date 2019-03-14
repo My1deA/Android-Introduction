@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.chapter6.widget.CircleAnimation;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -41,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v.getId() == R.id.btn_pull_refresh) {
             Intent intent = new Intent(this, PullRefreshActivity.class);
+            startActivity(intent);
+        }else if(v.getId()==R.id.btn_circle_animation){
+            Intent intent = new Intent(this, CircleAnimationActivity.class);
             startActivity(intent);
         }
     }
