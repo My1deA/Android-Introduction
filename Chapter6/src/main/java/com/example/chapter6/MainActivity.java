@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if(v.getId()==R.id.btn_circle_animation){
             Intent intent = new Intent(this, CircleAnimationActivity.class);
             startActivity(intent);
+        }else if(v.getId()==R.id.btn_notify_simple){
+            Intent intent = new Intent(this, NotifySimpleActivity.class);
+            startActivity(intent);
         }
     }
 }
