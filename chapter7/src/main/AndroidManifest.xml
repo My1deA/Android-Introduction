@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".TabHostActivity"/>
+        <activity android:name=".TabButtonActivity"/>
     </application>
 
 </manifest>

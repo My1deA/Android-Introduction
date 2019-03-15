@@ -1,5 +1,6 @@
 package com.example.chapter7;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,6 +44,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-
+        if (v.getId() == R.id.btn_tab_host) {
+            Intent intent = new Intent(this, TabHostActivity.class);
+            startActivity(intent);
+        }else if(v.getId()==R.id.btn_tab_button){
+            Intent intent = new Intent(this, TabButtonActivity.class);
+            startActivity(intent);
+        }
     }
 }
