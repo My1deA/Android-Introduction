@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if(v.getId()==R.id.btn_tab_button){
             Intent intent = new Intent(this, TabButtonActivity.class);
             startActivity(intent);
+        }else if(v.getId()==R.id.btn_tab_fragment){
+            Intent intent = new Intent(this, TabFragmentActivity.class);
+            startActivity(intent);
         }
     }
 }

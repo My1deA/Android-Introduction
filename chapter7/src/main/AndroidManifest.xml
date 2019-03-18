@@ -19,6 +19,7 @@
 
         <activity android:name=".TabHostActivity"/>
         <activity android:name=".TabButtonActivity"/>
+        <activity android:name=".TabFragmentActivity"/>
     </application>
 
 </manifest>
