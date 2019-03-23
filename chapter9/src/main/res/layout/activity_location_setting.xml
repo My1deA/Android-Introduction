@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="50dp">
+
+    <CheckBox
+        android:id="@+id/ck_gps"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="left|center_vertical"
+        android:button="@null"
+        android:checked="false"
+        android:drawableLeft="@drawable/ck_status_selector"
+        android:text="GPS"
+        android:textColor="#000"
+        android:textSize="17sp"/>
+
+    <CheckBox
+        android:id="@+id/ck_wlan"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="left|center_vertical"
+        android:button="@null"
+        android:checked="false"
+        android:drawableLeft="@drawable/ck_status_selector"
+        android:text="WLAN"
+        android:textColor="@color/black"
+        android:textSize="17sp"/>
+
+    <CheckBox
+        android:id="@+id/ck_mobiledata"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="left|center_vertical"
+        android:button="@null"
+        android:checked="false"
+        android:drawableLeft="@drawable/ck_status_selector"
+        android:text="数据连接"
+        android:textColor="@color/black"
+        android:textSize="17sp"/>
+
+</LinearLayout>
