@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if(v.getId()==R.id.btn_intent_service){
             Intent intent=new Intent(this,IntentServiceActivity.class);
             startActivity(intent);
+        }else if(v.getId()==R.id.btn_json_parse){
+            Intent intent=new Intent(this,JsonParseActivity.class);
+            startActivity(intent);
         }
     }
 }
