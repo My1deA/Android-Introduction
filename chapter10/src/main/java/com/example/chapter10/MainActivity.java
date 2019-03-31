@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(v.getId()==R.id.btn_progress_dialog){
             Intent intent = new Intent(this, ProgressDialogActivity.class);
             startActivity(intent);
+        }else if(v.getId()==R.id.btn_intent_service){
+            Intent intent=new Intent(this,IntentServiceActivity.class);
+            startActivity(intent);
         }
     }
 }

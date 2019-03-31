@@ -48,6 +48,7 @@
         </activity>
 
         <activity android:name=".ProgressDialogActivity"/>
+        <activity android:name=".IntentServiceActivity"/>
 
 
     </application>
