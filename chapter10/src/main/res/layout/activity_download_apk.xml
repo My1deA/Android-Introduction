@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:id="@+id/tv_apk_url"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:text="请选择要下载的安装包"
+            android:textColor="@color/black"
+            android:textSize="17sp"/>
+
+        <Spinner
+            android:id="@+id/sp_apk_url"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/tv_apk_url"
+            android:spinnerMode="dialog"
+            android:gravity="left|center">
+        </Spinner>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_apk_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="17sp"/>
+
+</LinearLayout>
