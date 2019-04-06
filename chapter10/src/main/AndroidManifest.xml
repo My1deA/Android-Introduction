@@ -50,6 +50,7 @@
         <activity android:name=".ProgressDialogActivity"/>
         <activity android:name=".IntentServiceActivity"/>
         <activity android:name=".JsonParseActivity"/>
+        <activity android:name=".HttpRequestActivity"/>
 
 
     </application>

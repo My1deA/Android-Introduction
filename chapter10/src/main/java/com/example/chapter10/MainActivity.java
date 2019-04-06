@@ -1,9 +1,15 @@
 package com.example.chapter10;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
+import com.example.chapter10.util.PermissionUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -47,6 +53,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if(v.getId()==R.id.btn_json_parse){
             Intent intent=new Intent(this,JsonParseActivity.class);
             startActivity(intent);
+        }else if(v.getId()==R.id.btn_http_request){
+            if(PermissionUtil.checkPermission(this, Manifest.permission.ACCESS_FINE_LOCATION,R.id.btn_http_request%4096)){
+                PermissionUtil.goActivity(this,HttpRequestActivity.class);
+            }
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode==R.id.btn_http_request%4096){
+            if(grantResults[0]== PackageManager.PERMISSION_GRANTED){
+                PermissionUtil.goActivity(this,HttpRequestActivity.class);
+            }else{
+                Toast.makeText(this, "需要允许定位权限才能开始定位噢", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

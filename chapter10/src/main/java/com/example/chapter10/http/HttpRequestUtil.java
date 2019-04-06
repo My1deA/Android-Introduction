@@ -80,7 +80,7 @@ public class HttpRequestUtil {
     }
 
     //get文本数据
-    public static HttpReqData getData(HttpReqData req_Data){
+    public static HttpRespData getData(HttpReqData req_Data){
         HttpRespData resp_data=new HttpRespData();
         try{
             URL url=new URL(req_Data.url);
@@ -97,7 +97,7 @@ public class HttpRequestUtil {
             e.printStackTrace();
             resp_data.err_msg=e.getMessage();
         }
-        return req_Data;
+        return resp_data;
     }
 
     //get图片数据
