@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path
+        name="Android/data/com.example.chapter10/"
+        path="files_root"></external-path>
+    <external-path
+        name="."
+        path="external_storage_root"></external-path>
+</paths>

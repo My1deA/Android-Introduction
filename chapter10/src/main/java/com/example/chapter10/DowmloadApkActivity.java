@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -42,7 +43,12 @@ public class DowmloadApkActivity extends AppCompatActivity {
     }
 
     private void initApkSpinner() {
-
+        ArrayAdapter<String> apkUrlAdapter=new ArrayAdapter<String>(this,R.layout.item_select,packageInfo.mNameArray);
+        sp_apk_url=findViewById(R.id.sp_apk_url);
+        sp_apk_url.setPrompt("请选择要下载的安装包");
+        sp_apk_url.setAdapter(apkUrlAdapter);
+        sp_apk_url.setSelection(0);
+        sp_apk_url.setOnItemSelectedListener(new ApkUrlSelectedListener());
 
     }
 
