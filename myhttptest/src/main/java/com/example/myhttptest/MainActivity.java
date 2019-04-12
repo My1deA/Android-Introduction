@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private final static String TAG="My_TestHttp";
     private TextView tv_result;
     private ProgressBar pb_circle;
-
+    private String hello;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
