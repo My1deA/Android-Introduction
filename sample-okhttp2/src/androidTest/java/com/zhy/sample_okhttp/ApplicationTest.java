@@ -1,6 +1,6 @@
-package com.zhy.http.okhttp;
+package com.zhy.sample_okhttp;
 
-//import android.app.Application;
+import android.app.Application;
 //import android.test.ApplicationTestCase;
 //
 ///**
@@ -13,3 +13,4 @@ package com.zhy.http.okhttp;
 //        super(Application.class);
 //    }
 //}
+
