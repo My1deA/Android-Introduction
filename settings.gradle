@@ -1,2 +1,2 @@
-include ':app', ':Chapter4', ':Chapter5', ':Chapter6', ':chapter7', ':chapter9', ':chapter13', ':filedialog', ':chapter10', ':okhttputils', ':sample-okhttp2', ':z1', ':HttpTest', ':HttpClientDemo'
+include ':app', ':Chapter4', ':Chapter5', ':Chapter6', ':chapter7', ':chapter9', ':chapter13', ':filedialog', ':chapter10', ':okhttputils', ':sample-okhttp2', ':z1', ':HttpTest', ':HttpClientDemo', ':z2', 'z0'
 
