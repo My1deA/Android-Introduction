@@ -89,13 +89,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener
                     sendNewPassWordMessage=newPassword.getText().toString();
                     sendConfirmPassWordMessage=confirmPassword.getText().toString();
                     check=Check(sendAccountMessage,sendNewPassWordMessage,sendConfirmPassWordMessage);
+                    if(check==true)
+                    {
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
 
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                if(check==true)
-                                {
                                     Looper.prepare();
                                     socket = new Socket("172.16.86.49", 12575);
                                     //向服务器发送数据
@@ -136,13 +136,15 @@ public class Register extends AppCompatActivity implements View.OnClickListener
                                         Toast.makeText(Register.this, "账号已存在", Toast.LENGTH_SHORT).show();
                                     }
                                     Looper.loop();
-                                }
 
-                            } catch (Exception ex) {
-                                ex.printStackTrace();
+
+                                } catch (Exception ex) {
+                                    ex.printStackTrace();
+                                }
                             }
-                        }
-                    }).start();
+                        }).start();
+                    }
+
                 }
             });
             builder.setCancelable(true);   //设置按钮是否可以按返回键取消,false则不可以取消

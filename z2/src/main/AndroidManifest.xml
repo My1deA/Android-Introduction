@@ -47,7 +47,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SocketTestActivity"/>
+        <activity android:name=".LoginActivity"/>
     </application>
 
 </manifest>
