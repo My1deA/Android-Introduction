@@ -23,6 +23,22 @@ android {
         }
     }
 
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+
+        targetCompatibility JavaVersion.VERSION_1_8
+
+    }
+    lintOptions{
+        abortOnError false
+    }
+
+}
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
 }
 
 dependencies {
@@ -33,4 +49,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation project(':okhttputils')
+    implementation 'com.google.code.gson:gson:2.3.1'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.14.1'
+    implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
 }

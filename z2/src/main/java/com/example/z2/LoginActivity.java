@@ -1,6 +1,7 @@
 package com.example.z2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +36,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         et_username=findViewById(R.id.et_username);
         et_password=findViewById(R.id.et_password);
         tv_result=findViewById(R.id.tv_result);
+        findViewById(R.id.btn_register).setOnClickListener(this);
         findViewById(R.id.btn_login).setOnClickListener(this);
     }
 
@@ -67,10 +69,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                            Toast.makeText(MainActivity.this,"Login Succ",Toast.LENGTH_SHORT).show();
                             Log.d(TAG, "Login Succ");
                             tv_result.setText("Login Succ");
+                            Intent intent=new Intent(LoginActivity.this,AppMainActivity.class);
+                            startActivity(intent);
                         }else{
 //                            Toast.makeText(MainActivity.this,"Login Fail",Toast.LENGTH_SHORT).show();
                             Log.d(TAG, "Login Fail");
-                            tv_result.setText("Login Fail");
+                            tv_result.setText("Login Fail 请验证用户名和密码是否正确");
                         }
                         Looper.loop();
 
@@ -82,6 +86,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 }
             }).start();
+        }else if(v.getId()==R.id.btn_register){
+            Intent intent=new Intent(this,RegisterActivity.class);
+            startActivity(intent);
         }
     }
 

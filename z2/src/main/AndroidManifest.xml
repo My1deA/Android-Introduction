@@ -47,7 +47,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".LoginActivity" android:theme="@style/AppCompatTheme" />
+        <activity android:name=".RegisterActivity" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".AppMainActivity" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".AppHomeActivity" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".AppFindActivity" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".AppMessageActivity" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".AppMeActivity" android:theme="@style/AppCompatTheme"/>
+
     </application>
 
 </manifest>
