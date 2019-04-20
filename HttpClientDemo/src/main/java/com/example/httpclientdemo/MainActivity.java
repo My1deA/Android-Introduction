@@ -64,7 +64,9 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
                     HttpClient httpclient=new DefaultHttpClient();
-                    HttpPost httpPost=new HttpPost("http://192.168.191.1:8080/HttpClientDemo/Login");
+//                    HttpPost httpPost=new HttpPost("http://192.168.253.1:8080/HttpClientDemo/Login");
+//                    HttpPost httpPost=new HttpPost("http://172.16.86.194:8080/HttpClientDemo/Login");
+                    HttpPost httpPost=new HttpPost("http://172.16.86.194:8080/MyWebTest/loginServlet");
                     List<NameValuePair> params=new ArrayList<NameValuePair>();
                     params.add(new BasicNameValuePair("ID",id));
                     params.add(new BasicNameValuePair("PW",pw));

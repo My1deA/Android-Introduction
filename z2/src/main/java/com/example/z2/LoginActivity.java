@@ -3,12 +3,17 @@ package com.example.z2;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.z2.Util.HttpUtil;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,6 +32,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextView tv_result;
     private String port="8888";
     private String IP="172.16.86.194";
+    private final static int LOGIN_JUDGE = 1;
+    private int RequestCode = 1;
 
 
     @Override
@@ -48,10 +55,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 @Override
                 public void run() {
                     try{
+
                         Looper.prepare();
                         String username=et_username.getText().toString().trim();
                         String password=et_password.getText().toString().trim();
                         Log.d(TAG, "btn_login username:"+username+"  password:"+password);
+
+//                        String result=HttpUtil.LoginByPost(username,password);
+//                        tv_result.setText(result);
+
 
                         //输出信息 登录密码信息
                         Socket socket=new Socket();
@@ -78,19 +90,70 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         }
                         Looper.loop();
 
-                    } catch (UnknownHostException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
 
                 }
             }).start();
+
         }else if(v.getId()==R.id.btn_register){
             Intent intent=new Intent(this,RegisterActivity.class);
             startActivity(intent);
         }
     }
+
+
+
+}
+
+//new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    try{
+//                        Looper.prepare();
+//                        String username=et_username.getText().toString().trim();
+//                        String password=et_password.getText().toString().trim();
+//                        Log.d(TAG, "btn_login username:"+username+"  password:"+password);
+//
+//                        //输出信息 登录密码信息
+//                        Socket socket=new Socket();
+//                        socket.connect(new InetSocketAddress(IP,Integer.parseInt(port)),3000);
+//
+//                        OutputStream outputStream=socket.getOutputStream();
+//                        PrintWriter printWriter=new PrintWriter(outputStream,true);
+//                        printWriter.println("0#"+username+"#"+password);
+//
+//                        //得到线程信息 看是否登录成功
+//                        BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+//                        String row=bufferedReader.readLine();
+//                        String [] info=row.split("#");
+//                        if(info[1].equalsIgnoreCase("SUCC")){
+////                            Toast.makeText(MainActivity.this,"Login Succ",Toast.LENGTH_SHORT).show();
+//                            Log.d(TAG, "Login Succ");
+//                            tv_result.setText("Login Succ");
+//                            Intent intent=new Intent(LoginActivity.this,AppMainActivity.class);
+//                            startActivity(intent);
+//                        }else{
+////                            Toast.makeText(MainActivity.this,"Login Fail",Toast.LENGTH_SHORT).show();
+//                            Log.d(TAG, "Login Fail");
+//                            tv_result.setText("Login Fail 请验证用户名和密码是否正确");
+//                        }
+//                        Looper.loop();
+//
+//                    } catch (UnknownHostException e) {
+//                        e.printStackTrace();
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//            }).start();
+
+
+
+
+
 
 
 
@@ -127,5 +190,3 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //            }.start();
 //
 //        }
-
-}

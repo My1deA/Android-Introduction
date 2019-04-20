@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        String path="http://192.168.0.101:8080/AndroidTest/mustLogin?logname="+name+"&password="+psw;
+//                        String path="http://192.168.0.101:8080/AndroidTest/mustLogin?logname="+name+"&password="+psw;
+                        String path="http://172.16.86.194:8080/AndroidTest/mustLogin?logname="+name+"&password="+psw;
                         try {
                             try{
                                 URL url = new URL(path); //新建url并实例化
