@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.z2"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -55,4 +55,5 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.3.1'
     implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.14.1'
     implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+
 }

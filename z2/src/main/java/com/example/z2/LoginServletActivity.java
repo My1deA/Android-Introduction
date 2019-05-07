@@ -32,8 +32,9 @@ public class LoginServletActivity extends AppCompatActivity implements View.OnCl
     private EditText et_username;
     private EditText et_password;
     private TextView tv_result;
-    private static String url="http://192.168.191.1:8080/MyWebTest/loginServlet";
+    private static String url="http://172.16.86.194:8080/MyWebTest/loginServlet";
     private final static int Login=1;
+    private final static int Fail=2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -73,16 +74,24 @@ public class LoginServletActivity extends AppCompatActivity implements View.OnCl
                             message.obj=row;
                             handler.sendMessage(message);
 
+                        }else{
+                            Message message=new Message();
+                            message.what=Fail;
+                            handler.sendMessage(message);
                         }
                     }catch (Exception e){
                         e.printStackTrace();
                     }
                 }
             }).start();
+
+        }else if(v.getId()==R.id.btn_register){
+            Intent intent=new Intent(this,RegisterServletActivity.class);
+            startActivity(intent);
         }
     }
 
-    public Handler handler=new Handler(){
+    private Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
             if(msg.what==Login){
@@ -91,11 +100,16 @@ public class LoginServletActivity extends AppCompatActivity implements View.OnCl
 
                 if(info[1].equalsIgnoreCase("SUCC")){
                     tv_result.setText("Login SUCC");
-//                    Intent intent=new Intent(LoginServletActivity.this,AppMainActivity.class);
-//                    startActivity(intent);
+                    Toast.makeText(LoginServletActivity.this,"Succ",Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(LoginServletActivity.this,AppMainActivity.class);
+                    startActivity(intent);
+                }else{
+                    tv_result.setText("Login Fail 请检查用户名和密码是否正确");
+                    Toast.makeText(LoginServletActivity.this,"Fail",Toast.LENGTH_SHORT).show();
                 }
-            }else{
-                tv_result.setText("Login Fail 请检查用户名和密码是否正确");
+            }else if(msg.what==Fail){
+                tv_result.setText("服务器繁忙");
+//                Toast.makeText(LoginServletActivity.this,"Succ",Toast.LENGTH_SHORT).show();
             }
 
         }

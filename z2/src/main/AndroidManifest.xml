@@ -56,6 +56,7 @@
         <activity android:name=".AppFindActivity" android:theme="@style/AppCompatTheme"/>
         <activity android:name=".AppMessageActivity" android:theme="@style/AppCompatTheme"/>
         <activity android:name=".AppMeActivity" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".OKhttp"/>
 
     </application>
 

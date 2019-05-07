@@ -12,7 +12,8 @@ public class AppMainActivity extends ActivityGroup implements View.OnClickListen
 
     private static final String TAG="AppMainActivity";
     private Bundle mBundle=new Bundle();
-    private LinearLayout ll_container,ll_home,ll_find,ll_message,ll_me;
+    private LinearLayout  ll_container,ll_home,ll_find,ll_message,ll_me;
+    public static Boolean isLogin=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +42,8 @@ public class AppMainActivity extends ActivityGroup implements View.OnClickListen
         }
     }
 
-
     //设置跳转页面
-    private void changeContainerView(View v) {
+    private  void changeContainerView(View v) {
         ll_home.setSelected(false);// 取消选中第一个标签
         ll_find.setSelected(false);
         ll_message.setSelected(false);
@@ -56,9 +56,8 @@ public class AppMainActivity extends ActivityGroup implements View.OnClickListen
         }else if(v==ll_message){
             toActivity("message",AppMessageActivity.class);
         }else if(v==ll_me){
-            toActivity("me",AppMeActivity.class);
+                toActivity("me",AppMeActivity.class);
         }
-
     }
 
     private void toActivity(String label,Class<?> cls){
@@ -73,4 +72,13 @@ public class AppMainActivity extends ActivityGroup implements View.OnClickListen
         // 把活动页面的顶层视图（即内容视图）添加到内容框架上
         ll_container.addView(v);
     }
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode==1){
+//            AppMeActivity appMeActivity= (AppMeActivity) getLocalActivityManager().getCurrentActivity();
+//            appMeActivity.handleActivityResult(requestCode,resultCode,data);
+//        }
+//    }
 }

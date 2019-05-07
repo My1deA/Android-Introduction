@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        mBaseUrl="http://172.16.86.194:8080/FileUpload/FileUploadServlet";
         mBaseUrl="http://172.16.86.194:8080/MyWebTest/uploadServlet";
         File file = new File(Environment.getExternalStorageDirectory(), "1.jpg");
-        File file2 = new File(Environment.getExternalStorageDirectory(), "2.txt");
+//        File file2 = new File(Environment.getExternalStorageDirectory(), "2.txt");
         if (!file.exists())
         {
             Toast.makeText(MainActivity.this, "文件不存在，请修改文件路径", Toast.LENGTH_SHORT).show();
@@ -306,7 +306,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         url=mBaseUrl;
         OkHttpUtils.post()//
                 .addFile("mFile", "service_1.jpg", file)//
-                .addFile("mFile", "service_2.txt", file2)//
+//                .addFile("mFile", "service_2.txt", file2)//
                 .url(url)
                 .params(params)//
                 .build()//
