@@ -69,58 +69,63 @@ public class Login_Fragment extends Fragment implements View.OnClickListener
             }
             else
             {
-                new Thread(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        try {
-                            Looper.prepare();
-                            socket = new Socket("172.16.86.49", 12574);
-                            //向服务器发送数据
-                            PrintWriter sendAccount = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "utf-8")));
-                            sendAccount.println(sendAccountMessage);
-                            sendAccount.flush();
-                            PrintWriter sendPassWord = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "utf-8")));
-                            sendPassWord.println(sendPassWordMessage);
-                            sendPassWord.flush();
-                            //接受服务端数据
-                            BufferedReader recv = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                            String recvMsg = recv.readLine();
-                            if (recvMsg != null)
-                            {
-//                          mRecvText.setText(recvMsg);
-                                Log.e(TAG, "返回Login的内容是:" + recvMsg);
-                            }
-                            else
-                            {
-//                          mRecvText.setText("Cannot receive data correctly.");
-                            }
+//                new Thread(new Runnable()
+//                {
+//                    @Override
+//                    public void run()
+//                    {
+//                        try {
+//                            Looper.prepare();
+//                            socket = new Socket("172.16.86.49", 12574);
+//                            //向服务器发送数据
+//                            PrintWriter sendAccount = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "utf-8")));
+//                            sendAccount.println(sendAccountMessage);
+//                            sendAccount.flush();
+//                            PrintWriter sendPassWord = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "utf-8")));
+//                            sendPassWord.println(sendPassWordMessage);
+//                            sendPassWord.flush();
+//                            //接受服务端数据
+//                            BufferedReader recv = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+//                            String recvMsg = recv.readLine();
+//                            if (recvMsg != null)
+//                            {
+////                          mRecvText.setText(recvMsg);
+//                                Log.e(TAG, "返回Login的内容是:" + recvMsg);
+//                            }
+//                            else
+//                            {
+////                          mRecvText.setText("Cannot receive data correctly.");
+//                            }
+//
+//                            if(recvMsg.equals("true"))
+//                            {
+//                                mActivity.switchFragment(login_success_fragment);
+//                                isLogin=true;
+//                                login_success_fragment.setUserName(sendAccountMessage);
+//                                login_success_fragment.setExit(false);
+//                            }
+//                            else
+//                            {
+//                                Toast.makeText(mActivity, "账号不存在或密码错误", Toast.LENGTH_SHORT).show();
+//                            }
+//                            sendAccount.close();
+//                            sendPassWord.close();
+//                            recv.close();
+//                            socket.close();
+//                            Looper.loop();
+//                        }
+//                        catch (Exception ex)
+//                        {
+//                            ex.printStackTrace();
+//                        }
+//                    }
+//
+//                }).start();
 
-                            if(recvMsg.equals("true"))
-                            {
-                                mActivity.switchFragment(login_success_fragment);
-                                isLogin=true;
-                                login_success_fragment.setUserName(sendAccountMessage);
-                                login_success_fragment.setExit(false);
-                            }
-                            else
-                            {
-                                Toast.makeText(mActivity, "账号不存在或密码错误", Toast.LENGTH_SHORT).show();
-                            }
-                            sendAccount.close();
-                            sendPassWord.close();
-                            recv.close();
-                            socket.close();
-                            Looper.loop();
-                        }
-                        catch (Exception ex)
-                        {
-                            ex.printStackTrace();
-                        }
-                    }
-
-                }).start();
+                mActivity.switchFragment(login_success_fragment);
+                isLogin=true;
+                login_success_fragment.setUserName(sendAccountMessage);
+                login_success_fragment.setExit(false);
             }
 
         }
